@@ -1,0 +1,19 @@
+[Unit]
+Description=stat
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/home/ubuntu/stats/stat.sh -start
+ExecReload=/home/ubuntu/stats/stat.sh -restart
+ExecStop=/home/ubuntu/stats/stat.sh -stop
+PrivateTmp=true
+Restart=always
+LimitNOFILE=10000
+RestartSec=5
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target

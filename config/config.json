@@ -1,0 +1,65 @@
+{
+  "statas_db_config": {
+    "dialect": "mysql",
+    "db_path": "root:123123@(127.0.0.1:3307)/statas?charset=utf8&parseTime=True&loc=Local"
+  },
+  "chain_config": {
+    "bsc_start_height": 3800000,
+    "bsc_provider": "wss://bsc-ws-node.nariox.org:443",
+    "bsc_confirm_num": 5,
+    "bsc_fetch_interval": 2000,
+    "swap_factory": "0xbcfccbde45ce874adcb698cc183debcf17952812",
+    "certificated_pairs": [
+      "0xBA51D1AB95756ca4eaB8737eCD450cd8F05384cF",
+      "0x52fa46D17DcDA5c512cA09b6B48a8fc69EF5B50F",
+      "0xaeBE45E3a03B734c68e5557AE04BFC76917B4686",
+      "0xdF9768268a4C934dF393a2CCbF0d126e654a4044",
+      "0x3Da30727ed0626b78C212e81B37B97A8eF8A25bB",
+      "0x20bCC3b8a0091dDac2d0BC30F68E6CBb97de59Cd",
+      "0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6",
+      "0x0Ed8E0A2D99643e1e65CCA22Ed4424090B8B7458",
+      "0xc639187ef82271D8f517de6FEAE4FaF5b517533c",
+      "0x1B96B92314C44b159149f7E0303511fB2Fc4774f",
+      "0xbCD62661A6b1DEd703585d3aF7d7649Ef4dcDB5c",
+      "0xd937FB9E6e47F3805981453BFB277a49FFfE04D7",
+      "0x981d2Ba1b298888408d342C39c2Ab92e8991691e",
+      "0x3f3d4CE222A7C919EA7f0231471c77478E36Fc0d",
+      "0x3f3d4CE222A7C919EA7f0231471c77478E36Fc0d",
+      "0xc15fa3E22c912A276550F3E5FE3b0Deb87B55aCd",
+      "0x610e7a287c27dfFcaC0F0a94f547Cc1B770cF483",
+      "0x4269e7f43a63cea1ad7707be565a94a9189967e9"
+    ],
+    "synup_pools": [
+      "0x73feaa1eE314F8c655E354234017bE2193C9E24E",
+      "0x1500fA1AFBFE4f4277ED0345cdf12b2C9cA7e139",
+      "0x624ef5C2C6080Af188AF96ee5B3160Bb28bb3E02",
+      "0x108BFE84Ca8BCe0741998cb0F60d313823cEC143",
+      "0x68C7d180bD8F7086D91E65A422c59514e4aFD638",
+      "0xbE65d7e42E05aD2c4ad28769dc9c5b4b6EAff2C7",
+      "0x543467B17cA5De50c8BF7285107A36785Ab57E56",
+      "0x68C7d180bD8F7086D91E65A422c59514e4aFD638",
+      "0xbE65d7e42E05aD2c4ad28769dc9c5b4b6EAff2C7",
+      "0x543467B17cA5De50c8BF7285107A36785Ab57E56",
+      "0x65aFEAFaec49F23159e897EFBDCe19D94A86A1B6",
+      "0x9c4EBADa591FFeC4124A7785CAbCfb7068fED2fb"
+    ]
+  },
+  "log_config": {
+    "level": "INFO",
+    "filename": "/home/ubuntu/stats/statas.log",
+    "max_file_size_in_mb": 10,
+    "max_backups_of_log_files": 10,
+    "max_age_to_retain_log_files_in_days": 3,
+    "use_console_logger": false,
+    "use_file_logger": true,
+    "compress": false
+  },
+  "alert_config": {
+    "telegram_bot_id": "",
+    "telegram_chat_id": "",
+    "block_update_timeout": 300
+  },
+  "server_config": {
+    "listen_addr": "0.0.0.0:8080"
+  }
+}
