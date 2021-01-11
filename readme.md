@@ -19,6 +19,7 @@ Restart docker after reboo.
 
 - 127.0.0.1:8080/api/v1/stat
 - 127.0.0.1:8080/api/v1/price
+- 127.0.0.1:8080/api/v1/syrup
 
 ## WorkSpace 
 `/home/ubuntu/stats`

@@ -231,6 +231,9 @@ func (r *StatasSvc) refreshSwapPairInfos() {
 	tokePriceMetrics := make(map[string]map[string]*PriceVolume, 0)
 	for _, swapContract := range r.swapPairList {
 		swapInfo, err := r.refreshSwapPairInfo(swapContract)
+		if swapInfo.reserve0*swapInfo.reserve1 < 100 {
+			continue
+		}
 		if err != nil {
 			util.Logger.Errorf("refreshSwapPairInfo failed, err=%v, will retry refresh later", err)
 			return
