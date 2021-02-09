@@ -30,17 +30,20 @@ func NewServer(config *util.Config, statSvc *statas.StatasSvc) *Server {
 }
 
 func (s *Server) Stat(w http.ResponseWriter, r *http.Request) {
-	swapPiars, totalVolume, lockVolume, updateAt := s.statSvc.GetSwapPairInfos()
+		swapPiars, totalVolume, lockVolume, updateAt := s.statSvc.GetSwapPairInfos()
+	_, t, _ := s.statSvc.GetSynup()
 	resp := struct {
-		UpdateAt    time.Time             `json:"update_at"`
-		TotalVolume float64               `json:"24h_total_volume"`
-		LockVolume  float64               `json:"total_value_locked"`
-		TradePairs  []statas.SwapPairInfo `json:"trade_pairs"`
+		UpdateAt            time.Time             `json:"update_at"`
+		TotalVolume         float64               `json:"24h_total_volume"`
+		LockVolume          float64               `json:"total_value_locked"`
+		TradePairs          []statas.SwapPairInfo `json:"trade_pairs"`
+		TotalValueLockedAll float64               `json:"total_value_locked_all"`
 	}{
 		updateAt,
 		totalVolume,
 		lockVolume,
 		swapPiars,
+			t + lockVolume,
 	}
 	jsonBytes, err := json.MarshalIndent(resp, "", "  ")
 	if err != nil {
