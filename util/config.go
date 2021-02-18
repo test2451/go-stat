@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/pancakeswap/pancake-statas/common"
+	"github.com/pieswap/pie-statas/common"
 )
 
 type Config struct {
