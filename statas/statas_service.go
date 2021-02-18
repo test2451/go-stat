@@ -3,7 +3,7 @@ package statas
 import (
 	"fmt"
 	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/pancakeswap/pancake-statas/executor"
+	"github.com/pieswap/pie-statas/executor"
 	"math/big"
 	"sync"
 	"time"
@@ -13,10 +13,10 @@ import (
 	ethcmm "github.com/ethereum/go-ethereum/common"
 
 	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/pancakeswap/pancake-statas/abi"
-	"github.com/pancakeswap/pancake-statas/common"
-	"github.com/pancakeswap/pancake-statas/model"
-	"github.com/pancakeswap/pancake-statas/util"
+	"github.com/pieswap/pie-statas/abi"
+	"github.com/pieswap/pie-statas/common"
+	"github.com/pieswap/pie-statas/model"
+	"github.com/pieswap/pie-statas/util"
 )
 
 const (
@@ -24,7 +24,7 @@ const (
 )
 
 var STABLE_TOKENS = map[string]bool{"BUSD": true}
-var BASE_TOKENS = []string{"WBNB", "BUSD"}
+var BASE_TOKENS = []string{"WOKT", "BUSD"}
 
 type SwapPairInfo struct {
 	SwapPairContract string  `json:"swap_pair_contract"`
@@ -140,11 +140,11 @@ func (r *StatasSvc) refreshSwapPairs() []ethcmm.Address {
 		if err != nil {
 			continue
 		}
-		token0Instance, err := abi.NewBep20(token0, r.bscClient)
+		token0Instance, err := abi.NewOip20(token0, r.bscClient)
 		if err != nil {
 			continue
 		}
-		token1Instance, err := abi.NewBep20(token1, r.bscClient)
+		token1Instance, err := abi.NewOip20(token1, r.bscClient)
 		if err != nil {
 			continue
 		}
@@ -283,7 +283,7 @@ func (r *StatasSvc) refreshSwapPairInfos() {
 		}
 	}
 	// to decrease the impact of low liquidity
-	tokenPrice["WBNB"] = tokePriceMetrics["WBNB"]["BUSD"].Price
+	tokenPrice["WOKT"] = tokePriceMetrics["WOKT"]["BUSD"].Price
 
 	for _, s := range BASE_TOKENS {
 		p := tokenPrice[s]
@@ -294,8 +294,8 @@ func (r *StatasSvc) refreshSwapPairInfos() {
 		}
 	}
 
-	// for cake,
-	s := "Cake"
+	// for pie,
+	s := "Pie"
 	p := tokenPrice[s]
 	for os, op := range tokePriceMetrics[s] {
 		if _, exist := tokenPrice[os]; !exist && op.Price != 0 && op.Volume*p > QulifiedVolume {
@@ -336,7 +336,7 @@ func (r *StatasSvc) refreshSwapPairInfos() {
 		}
 		var name string
 		if idx == 0 {
-			name = "Cake"
+			name = "Pie"
 		} else {
 			rewardToken, err := poolIns.RewardToken(nil)
 			if err != nil {
@@ -353,9 +353,9 @@ func (r *StatasSvc) refreshSwapPairInfos() {
 				continue
 			}
 		}
-		balance, err := cakeIns.BalanceOf(nil, addr)
+		balance, err := pieIns.BalanceOf(nil, addr)
 		if err != nil {
-			util.Logger.Errorf("failed to get cake balance Ins %v, %s", err, addr.String())
+			util.Logger.Errorf("failed to get pie balance Ins %v, %s", err, addr.String())
 			continue
 		}
 		cakePrice := tokenPrice["Cake"]
