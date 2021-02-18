@@ -1,8 +1,8 @@
 build:
 ifeq ($(OS),Windows_NT)
-	go build -o build/pancake-statas.exe ./main.go
+	go build -o build/pie-statas.exe ./main.go
 else
-	go build -o build/pancake-statas ./main.go
+	go build -o build/pie-statas ./main.go
 endif
 
 install:
