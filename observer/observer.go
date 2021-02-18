@@ -7,10 +7,10 @@ import (
 
 	"github.com/jinzhu/gorm"
 
-	"github.com/pancakeswap/pancake-statas/common"
-	"github.com/pancakeswap/pancake-statas/executor"
-	"github.com/pancakeswap/pancake-statas/model"
-	"github.com/pancakeswap/pancake-statas/util"
+	"github.com/pieswap/pie-statas/common"
+	"github.com/pieswap/pie-statas/executor"
+	"github.com/pieswap/pie-statas/model"
+	"github.com/pieswap/pie-statas/util"
 )
 
 type Observer struct {
