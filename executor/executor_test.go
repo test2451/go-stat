@@ -12,7 +12,7 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
-	eabi "github.com/pancakeswap/pancake-statas/abi"
+	eabi "github.com/pieswap/pie-statas/abi"
 )
 
 func TestParseSwapEvent(t *testing.T) {
