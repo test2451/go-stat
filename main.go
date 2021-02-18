@@ -10,12 +10,12 @@ import (
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 
-	"github.com/pancakeswap/pancake-statas/executor"
-	"github.com/pancakeswap/pancake-statas/model"
-	"github.com/pancakeswap/pancake-statas/observer"
-	"github.com/pancakeswap/pancake-statas/server"
-	"github.com/pancakeswap/pancake-statas/statas"
-	"github.com/pancakeswap/pancake-statas/util"
+	"github.com/pieswap/pie-statas/executor"
+	"github.com/pieswap/pie-statas/model"
+	"github.com/pieswap/pie-statas/observer"
+	"github.com/pieswap/pie-statas/server"
+	"github.com/pieswap/pie-statas/statas"
+	"github.com/pieswap/pie-statas/util"
 )
 
 const (
