@@ -12,4 +12,4 @@ RUN apk add --no-cache $PACKAGES && \
     make build
 
 # Run the app
-CMD ./build/pancake-statas --config-path ./config/config.json
+CMD ./build/pi-statas --config-path ./config/config.json
