@@ -3,7 +3,7 @@
 export GOGC=200
 
 function startStat() {
-	/home/ubuntu/stats/build/pancake-statas --config-path /home/ubuntu/stats/config/config.json
+	/home/ubuntu/stats/build/pie-statas --config-path /home/ubuntu/stats/config/config.json
 }
 
 function stopStat() {
@@ -13,7 +13,7 @@ function stopStat() {
         do
             kill $pid
             sleep 5
-            pid=`ps -ef | grep  /home/ubuntu/stats/build/pancake-statas | grep -v grep | awk '{print $2}'`
+            pid=`ps -ef | grep  /home/ubuntu/stats/build/pie-statas | grep -v grep | awk '{print $2}'`
             if [ -z "$pid" ]; then
                 #echo "statas stoped"
                 break
