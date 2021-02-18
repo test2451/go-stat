@@ -1,4 +1,4 @@
-module github.com/pancakeswap/pancake-statas
+module github.com/pieswap/pie-statas
 
 go 1.14
 
