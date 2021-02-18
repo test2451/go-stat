@@ -8,8 +8,8 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/pancakeswap/pancake-statas/statas"
-	"github.com/pancakeswap/pancake-statas/util"
+	"github.com/pieswap/pie-statas/statas"
+	"github.com/pieswap/pie-statas/util"
 )
 
 const (
